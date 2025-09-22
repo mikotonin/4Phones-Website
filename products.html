@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>4Phones — Home</title>
- <link rel="stylesheet" href="styles.css" />
+  <title>4Phones — Products</title>
+  <link rel="stylesheet" href="CSS/styles.css"/>
   <script defer src="JS/app.js"></script>
 </head>
 <body>
   <div class="wrapper">
-    <!-- Header -->
     <header class="site-header">
       <img src="IMG/4phoneslogo.jpg" alt="4Phones Logo"/>
     </header>
 
-    <!-- Menu -->
     <nav class="site-menu" aria-label="Main navigation">
       <div class="menu-left">
         <a class="menu-link" href="index.html">Home</a>
@@ -29,30 +27,51 @@
       </div>
     </nav>
 
-    <!-- Content: Main + Aside -->
     <div class="content">
       <main>
-        <h1>Welcome to 4Phones</h1>
-        <p>4Phones is the one place for all your mobile phone needs.</p>
+        <h1>Products we sell</h1>
+        <h2>4Phones sells products in the following categories:</h2>
 
-        <section class="grid-cards" aria-label="Main product categories">
-          <a class="card" href="products.html#latest">
-            <img src="IMG/latest.jpg" alt="Latest Mobile Phones"/>
-            <h3>Latest Mobile Phones</h3>
+        <!-- Anchors for Home page links -->
+        <div id="latest"></div>
+        <div class="grid-cards" style="margin-top:10px">
+          <a class="card" id="iphone">
+            <img src="IMG/iphone.jpg" alt="iPhone"/>
+            <h3>iPhone</h3>
           </a>
-          <a class="card" href="products.html#refurbished">
-            <img src="IMG/refurbished.jpg" alt="Refurbished Mobile Phones"/>
-            <h3>Refurbished Mobile Phones</h3>
+          <a class="card" id="samsung">
+            <img src="IMG/samsung.jpg" alt="Samsung"/>
+            <h3>Samsung</h3>
           </a>
-          <a class="card" href="products.html#accessories">
-            <img src="IMG/accessories.jpg" alt="Accessories"/>
-            <h3>Accessories</h3>
+          <a class="card" id="oppo">
+            <img src="IMG/oppo.jpg" alt="Oppo"/>
+            <h3>Oppo</h3>
           </a>
-          <a class="card" href="products.html#tablets">
+          <a class="card" id="lg">
+            <img src="IMG/lg.jpg" alt="LG"/>
+            <h3>LG</h3>
+          </a>
+          <a class="card" id="huawei">
+            <img src="IMG/huawei.jpg" alt="Huawei"/>
+            <h3>Huawei</h3>
+          </a>
+          <a class="card" id="google">
+            <img src="IMG/google.jpg" alt="Google"/>
+            <h3>Google</h3>
+          </a>
+          <a class="card" id="storage">
+            <img src="IMG/storage.jpg" alt="Storage"/>
+            <h3>Storage</h3>
+          </a>
+          <a class="card" id="tablets">
             <img src="IMG/tablets.jpg" alt="Tablets"/>
             <h3>Tablets</h3>
           </a>
-        </section>
+        </div>
+
+        <!-- category anchors referenced by Home -->
+        <div id="refurbished" style="margin-top:20px"></div>
+        <div id="accessories" style="margin-top:20px"></div>
       </main>
 
       <aside>
@@ -69,7 +88,6 @@
       </aside>
     </div>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-inner">
         <p>&copy; <span id="year"></span> Mike Lacsina</p>
