@@ -1,168 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>4Phones — Register</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Your JS with JSDoc (from our previous message) -->
-  <script defer src="app.js"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <header class="site-header">
-      <img src="Assets/4phoneslogo.jpg" alt="4Phones Logo"/>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4Phones — Register</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="/app.js?v=2"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="site-header">
+        <img src="Assets/4phoneslogo.jpg" alt="4Phones Logo" />
+      </header>
 
-    <nav class="site-menu" aria-label="Main navigation">
-      <div class="menu-left">
-        <a class="menu-link" href="index.html">Home</a>
-        <a class="menu-link" href="products.html">Products</a>
-        <a class="menu-link" href="register.html" aria-current="page">Register</a>
-        <a class="menu-link" href="about.html">About Us</a>
-        <a class="menu-link" href="contact.html">Contact Us</a>
-      </div>
-      <div class="menu-right">
-        <input class="menu-search" type="search" placeholder="Search" aria-label="Search site"/>
-        <button class="btn" type="button">Search</button>
-      </div>
-    </nav>
+      <form id="register-form" novalidate>…</form>
 
-    <div class="content">
-      <main>
-        <h1>Registration Form</h1>
-        <p>Please complete the following form to register for an account on our website.</p>
-
-        <!-- Disable native browser validation so our JS handles everything -->
-        <form id="register-form" class="form" method="post" action="#" novalidate>
-          <div class="row">
-            <label for="reg-name">Name</label>
-            <input id="reg-name" name="reg-name" type="text" aria-describedby="reg-name-err" />
-            <small id="reg-name-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-username">Username</label>
-            <input id="reg-username" name="reg-username" type="text" aria-describedby="reg-username-err" />
-            <small id="reg-username-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-email">Email Address</label>
-            <input id="reg-email" name="reg-email" type="email" aria-describedby="reg-email-err" />
-            <small id="reg-email-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-password">Password</label>
-            <input id="reg-password" name="reg-password" type="password" aria-describedby="reg-password-err" />
-            <small id="reg-password-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-confirm">Confirm Password</label>
-            <input id="reg-confirm" name="reg-confirm" type="password" aria-describedby="reg-confirm-err" />
-            <small id="reg-confirm-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-firstname">First Name</label>
-            <input id="reg-firstname" name="reg-firstname" type="text" aria-describedby="reg-firstname-err" />
-            <small id="reg-firstname-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-surname">Surname</label>
-            <input id="reg-surname" name="reg-surname" type="text" aria-describedby="reg-surname-err" />
-            <small id="reg-surname-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-gender">Gender</label>
-            <select id="reg-gender" name="reg-gender" aria-describedby="reg-gender-err">
-              <option value="">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-            <small id="reg-gender-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-address">Address</label>
-            <input id="reg-address" name="reg-address" type="text" aria-describedby="reg-address-err" />
-            <small id="reg-address-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-suburb">Suburb</label>
-            <input id="reg-suburb" name="reg-suburb" type="text" aria-describedby="reg-suburb-err" />
-            <small id="reg-suburb-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-postcode">Postcode</label>
-            <input
-              id="reg-postcode"
-              name="reg-postcode"
-              type="text"
-              inputmode="numeric"
-              aria-describedby="reg-postcode-err"
-              placeholder="e.g., 3000"
-            />
-            <small id="reg-postcode-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-state">State</label>
-            <select id="reg-state" name="reg-state" aria-describedby="reg-state-err">
-              <option value="">Select</option>
-              <option>ACT</option><option>NSW</option><option>NT</option>
-              <option>QLD</option><option>SA</option><option>TAS</option>
-              <option>VIC</option><option>WA</option>
-            </select>
-            <small id="reg-state-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row">
-            <label for="reg-phone">Phone number</label>
-            <input
-              id="reg-phone"
-              name="reg-phone"
-              type="text"
-              inputmode="numeric"
-              aria-describedby="reg-phone-err"
-              placeholder="8–10 digits"
-            />
-            <small id="reg-phone-err" class="error" aria-live="polite"></small>
-          </div>
-
-          <div class="row" style="display:flex; gap:10px">
-            <button type="reset" class="btn secondary">Clear</button>
-            <button type="submit" class="btn">Register</button>
-          </div>
-        </form>
-      </main>
-
-      <aside>
-        <div class="cart">
-          <h2>Purchases</h2>
-          <table>
-            <tr>
-              <td>0 items</td>
-              <td>Cart sub-total: $0</td>
-            </tr>
-          </table>
-          <button class="btn checkout" type="button">Go to Checkout</button>
+      <nav class="site-menu" aria-label="Main navigation">
+        <div class="menu-left">
+          <a class="menu-link" href="index.html">Home</a>
+          <a class="menu-link" href="products.html">Products</a>
+          <a class="menu-link" href="register.html" aria-current="page"
+            >Register</a
+          >
+          <a class="menu-link" href="about.html">About Us</a>
+          <a class="menu-link" href="contact.html">Contact Us</a>
         </div>
-      </aside>
-    </div>
+        <div class="menu-right">
+          <input
+            class="menu-search"
+            type="search"
+            placeholder="Search"
+            aria-label="Search site"
+          />
+          <button class="btn" type="button">Search</button>
+        </div>
+      </nav>
 
-    <footer>
-      <div class="footer-inner">
-        <p>&copy; <span id="year"></span> Mike Lacsina</p>
+      <div class="content">
+        <main>
+          <h1>Registration Form</h1>
+          <p>
+            Please complete the following form to register for an account on our
+            website.
+          </p>
+
+          <!-- Disable native browser validation so our JS handles everything -->
+          <form
+            id="register-form"
+            class="form"
+            method="post"
+            action="#"
+            novalidate
+          >
+            <div class="row">
+              <label for="reg-name">Name</label>
+              <input
+                id="reg-name"
+                name="reg-name"
+                type="text"
+                aria-describedby="reg-name-err"
+              />
+              <small id="reg-name-err" class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-username">Username</label>
+              <input
+                id="reg-username"
+                name="reg-username"
+                type="text"
+                aria-describedby="reg-username-err"
+              />
+              <small
+                id="reg-username-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-email">Email Address</label>
+              <input
+                id="reg-email"
+                name="reg-email"
+                type="email"
+                aria-describedby="reg-email-err"
+              />
+              <small
+                id="reg-email-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-password">Password</label>
+              <input
+                id="reg-password"
+                name="reg-password"
+                type="password"
+                aria-describedby="reg-password-err"
+              />
+              <small
+                id="reg-password-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-confirm">Confirm Password</label>
+              <input
+                id="reg-confirm"
+                name="reg-confirm"
+                type="password"
+                aria-describedby="reg-confirm-err"
+              />
+              <small
+                id="reg-confirm-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-firstname">First Name</label>
+              <input
+                id="reg-firstname"
+                name="reg-firstname"
+                type="text"
+                aria-describedby="reg-firstname-err"
+              />
+              <small
+                id="reg-firstname-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-surname">Surname</label>
+              <input
+                id="reg-surname"
+                name="reg-surname"
+                type="text"
+                aria-describedby="reg-surname-err"
+              />
+              <small
+                id="reg-surname-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-gender">Gender</label>
+              <select
+                id="reg-gender"
+                name="reg-gender"
+                aria-describedby="reg-gender-err"
+              >
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <small
+                id="reg-gender-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-address">Address</label>
+              <input
+                id="reg-address"
+                name="reg-address"
+                type="text"
+                aria-describedby="reg-address-err"
+              />
+              <small
+                id="reg-address-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-suburb">Suburb</label>
+              <input
+                id="reg-suburb"
+                name="reg-suburb"
+                type="text"
+                aria-describedby="reg-suburb-err"
+              />
+              <small
+                id="reg-suburb-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-postcode">Postcode</label>
+              <input
+                id="reg-postcode"
+                name="reg-postcode"
+                type="text"
+                inputmode="numeric"
+                aria-describedby="reg-postcode-err"
+                placeholder="e.g., 3000"
+              />
+              <small
+                id="reg-postcode-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-state">State</label>
+              <select
+                id="reg-state"
+                name="reg-state"
+                aria-describedby="reg-state-err"
+              >
+                <option value="">Select</option>
+                <option>ACT</option>
+                <option>NSW</option>
+                <option>NT</option>
+                <option>QLD</option>
+                <option>SA</option>
+                <option>TAS</option>
+                <option>VIC</option>
+                <option>WA</option>
+              </select>
+              <small
+                id="reg-state-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row">
+              <label for="reg-phone">Phone number</label>
+              <input
+                id="reg-phone"
+                name="reg-phone"
+                type="text"
+                inputmode="numeric"
+                aria-describedby="reg-phone-err"
+                placeholder="8–10 digits"
+              />
+              <small
+                id="reg-phone-err"
+                class="error"
+                aria-live="polite"
+              ></small>
+            </div>
+
+            <div class="row" style="display: flex; gap: 10px">
+              <button type="reset" class="btn secondary">Clear</button>
+              <button type="submit" class="btn">Register</button>
+            </div>
+          </form>
+        </main>
+
+        <aside>
+          <div class="cart">
+            <h2>Purchases</h2>
+            <table>
+              <tr>
+                <td>0 items</td>
+                <td>Cart sub-total: $0</td>
+              </tr>
+            </table>
+            <button class="btn checkout" type="button">Go to Checkout</button>
+          </div>
+        </aside>
       </div>
-    </footer>
-  </div>
-</body>
+
+      <footer>
+        <div class="footer-inner">
+          <p>&copy; <span id="year"></span> Mike Lacsina</p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

@@ -1,3 +1,4 @@
+console.log("app.js loaded ✅");
 /* =========================================================
    4Phones - Client-side JS (with full JSDoc)
    - Hover effects for links/buttons

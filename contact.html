@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>4Phones — Contact Us</title>
- <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <header class="site-header">
-      <img src="Assets/4phoneslogo.jpg" alt="4Phones Logo"/>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4Phones — Contact Us</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="/app.js?v=2"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="site-header">
+        <img src="Assets/4phoneslogo.jpg" alt="4Phones Logo" />
+      </header>
 
-    <nav class="site-menu" aria-label="Main navigation">
-      <div class="menu-left">
-        <a class="menu-link" href="index.html">Home</a>
-        <a class="menu-link" href="products.html">Products</a>
-        <a class="menu-link" href="register.html">Register</a>
-        <a class="menu-link" href="about.html">About Us</a>
-        <a class="menu-link" href="contact.html">Contact Us</a>
-      </div>
-      <div class="menu-right">
-        <input class="menu-search" type="search" placeholder="Search"/>
-        <button class="btn">Search</button>
-      </div>
-    </nav>
+      <form id="contact-form" novalidate>…</form>
 
-    <div class="content">
-      <main>
-        <h1>Contact Us Form</h1>
-        <p>Please complete the following form to send your questions/inquiry to us.</p>
-
-        <form id="contact-form" class="form" method="post" action="#">
-          <div class="row">
-            <label for="con-name">Name</label>
-            <input id="con-name" name="con-name" type="text"/>
-            <small id="con-name-err" class="error"></small>
-          </div>
-
-          <div class="row">
-            <label for="con-email">Email Address</label>
-            <input id="con-email" name="con-email" type="email"/>
-            <small id="con-email-err" class="error"></small>
-          </div>
-
-          <div class="row">
-            <label for="con-phone">Phone number</label>
-            <input id="con-phone" name="con-phone" type="text"/>
-            <small id="con-phone-err" class="error"></small>
-          </div>
-
-          <div class="row">
-            <label for="con-message">Message</label>
-            <textarea id="con-message" name="con-message" rows="5"></textarea>
-            <small id="con-message-err" class="error"></small>
-          </div>
-
-          <div class="row" style="display:flex; gap:10px">
-            <button type="reset" class="btn secondary">Clear</button>
-            <button type="submit" class="btn">Submit</button>
-          </div>
-        </form>
-      </main>
-
-      <aside>
-        <div class="cart">
-          <h2>Purchases</h2>
-          <table>
-            <tr>
-              <td>0 items</td>
-              <td>Cart sub-total: $0</td>
-            </tr>
-          </table>
-          <button class="btn checkout">Go to Checkout</button>
+      <nav class="site-menu" aria-label="Main navigation">
+        <div class="menu-left">
+          <a class="menu-link" href="index.html">Home</a>
+          <a class="menu-link" href="products.html">Products</a>
+          <a class="menu-link" href="register.html">Register</a>
+          <a class="menu-link" href="about.html">About Us</a>
+          <a class="menu-link" href="contact.html">Contact Us</a>
         </div>
-      </aside>
-    </div>
+        <div class="menu-right">
+          <input class="menu-search" type="search" placeholder="Search" />
+          <button class="btn">Search</button>
+        </div>
+      </nav>
 
-    <footer>
-      <div class="footer-inner">
-        <p>&copy; <span id="year"></span> Mike Lacsina</p>
+      <div class="content">
+        <main>
+          <h1>Contact Us Form</h1>
+          <p>
+            Please complete the following form to send your questions/inquiry to
+            us.
+          </p>
+
+          <form id="contact-form" class="form" method="post" action="#">
+            <div class="row">
+              <label for="con-name">Name</label>
+              <input id="con-name" name="con-name" type="text" />
+              <small id="con-name-err" class="error"></small>
+            </div>
+
+            <div class="row">
+              <label for="con-email">Email Address</label>
+              <input id="con-email" name="con-email" type="email" />
+              <small id="con-email-err" class="error"></small>
+            </div>
+
+            <div class="row">
+              <label for="con-phone">Phone number</label>
+              <input id="con-phone" name="con-phone" type="text" />
+              <small id="con-phone-err" class="error"></small>
+            </div>
+
+            <div class="row">
+              <label for="con-message">Message</label>
+              <textarea id="con-message" name="con-message" rows="5"></textarea>
+              <small id="con-message-err" class="error"></small>
+            </div>
+
+            <div class="row" style="display: flex; gap: 10px">
+              <button type="reset" class="btn secondary">Clear</button>
+              <button type="submit" class="btn">Submit</button>
+            </div>
+          </form>
+        </main>
+
+        <aside>
+          <div class="cart">
+            <h2>Purchases</h2>
+            <table>
+              <tr>
+                <td>0 items</td>
+                <td>Cart sub-total: $0</td>
+              </tr>
+            </table>
+            <button class="btn checkout">Go to Checkout</button>
+          </div>
+        </aside>
       </div>
-    </footer>
-  </div>
-</body>
+
+      <footer>
+        <div class="footer-inner">
+          <p>&copy; <span id="year"></span> Mike Lacsina</p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
