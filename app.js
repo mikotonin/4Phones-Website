@@ -33,6 +33,107 @@ function attachHoverEffects(){
 }
 
 /**
+ * ============================
+ * FORM VALIDATION LOGIC
+ * ============================
+ * @returns {void}
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  attachHoverEffects(); // keep your hover effects working
+
+  // ============================
+  // Register Form Validation
+  // ============================
+  const registerForm = document.getElementById("registerForm");
+  if (registerForm) {
+    registerForm.addEventListener("submit", (e) => {
+      e.preventDefault(); // stop 405 error
+      let valid = true;
+
+      // Grab fields
+      const username = registerForm.querySelector("#username");
+      const email = registerForm.querySelector("#email");
+      const password = registerForm.querySelector("#password");
+      const confirmPassword = registerForm.querySelector("#confirmPassword");
+      const firstName = registerForm.querySelector("#firstName");
+      const surname = registerForm.querySelector("#surname");
+      const gender = registerForm.querySelector("#gender");
+
+      // Reset errors
+      registerForm.querySelectorAll(".error-msg").forEach((el) => el.textContent = "");
+
+      if (!username.value.trim()) { showError(username, "Username is required"); valid = false; }
+      if (!email.value.trim()) { showError(email, "Email is required"); valid = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        showError(email, "Please enter a valid email"); valid = false;
+      }
+      if (!password.value.trim()) { showError(password, "Password is required"); valid = false; }
+      if (confirmPassword.value.trim() !== password.value.trim()) {
+        showError(confirmPassword, "Passwords do not match"); valid = false;
+      }
+      if (!firstName.value.trim()) { showError(firstName, "First name is required"); valid = false; }
+      if (!surname.value.trim()) { showError(surname, "Surname is required"); valid = false; }
+      if (!gender.value.trim()) { showError(gender, "Please select a gender"); valid = false; }
+
+      if (valid) {
+        alert("✅ Registration form validated successfully!");
+        registerForm.reset();
+      }
+    });
+  }
+
+  // ============================
+  // Contact Form Validation
+  // ============================
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      const name = contactForm.querySelector("#contactName");
+      const email = contactForm.querySelector("#contactEmail");
+      const message = contactForm.querySelector("#contactMessage");
+
+      contactForm.querySelectorAll(".error-msg").forEach((el) => el.textContent = "");
+
+      if (!name.value.trim()) { showError(name, "Name is required"); valid = false; }
+      if (!email.value.trim()) { showError(email, "Email is required"); valid = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        showError(email, "Please enter a valid email"); valid = false;
+      }
+      if (!message.value.trim()) { showError(message, "Message cannot be empty"); valid = false; }
+
+      if (valid) {
+        alert("✅ Contact form validated successfully!");
+        contactForm.reset();
+      }
+    });
+  }
+});
+
+/**
+ * Displays an error message below a given input element.
+ * Creates a <div> if one doesn't already exist.
+ *
+ * @param {HTMLElement} inputElement - The input element to display the error for.
+ * @param {string} message - The error message to display.
+ * @returns {void}
+ */
+function showError(inputElement, message) {
+  let error = inputElement.parentElement.querySelector(".error-msg");
+  if (!error) {
+    error = document.createElement("div");
+    error.className = "error-msg";
+    error.style.color = "red";
+    error.style.fontSize = "0.85rem";
+    error.style.marginTop = "4px";
+    inputElement.parentElement.appendChild(error);
+  }
+  error.textContent = message;
+}
+
+/**
  * Put the current year into an element with id="year", if present.
  * @returns {void}
  */
