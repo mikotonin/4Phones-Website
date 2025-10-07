@@ -151,3 +151,86 @@ footer{
   .content{ grid-template-columns: 1fr; }
   aside{ border-left:none; padding-left:0 }
 }
+
+/* ===== Forms: Layout & Spacing (register + contact) ===== */
+form#registerForm, form#contactForm {
+  max-width: 640px;        /* keep form a comfortable width */
+  margin: 0 auto 3rem;     /* center the form */
+}
+
+.form-field {
+  margin-bottom: 16px;     /* space between fields */
+}
+
+/* Put labels on their own line and style them slightly */
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+/* Inputs look consistent with the rest of the site */
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;         /* light gray border */
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  background: #fff;
+}
+
+/* Focus style for better UX */
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #3b82f6;              /* blue highlight */
+  box-shadow: 0 0 0 3px rgba(59,130,246,.15);
+}
+
+/* Error messages we append via JS */
+.error-msg {
+  color: #e11d48;                     /* red-600 */
+  margin-top: 6px;
+  font-size: 0.9rem;
+  min-height: 1em;                    /* keeps layout from jumping */
+}
+
+/* Keep the primary button consistent */
+form .btn,
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;                /* blue-600 */
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, filter .15s ease;
+}
+
+form .btn:hover,
+button[type="submit"]:hover {
+  filter: brightness(1.02);
+}
+
+form .btn:active,
+button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Optional: align the small purchase card on the right as before */
+@media (min-width: 992px) {
+  .content-with-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+    align-items: start;
+  }
+}
